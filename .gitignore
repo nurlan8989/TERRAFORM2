@@ -1,6 +1,13 @@
 # Local .terraform directories
 **/.terraform/*
 
+.terraform.lock.hcl
+
+
+*id_rebrain.pub
+
+*id_rsa.pub
+
 # terraform.tfvars
 
 *.tfvars
