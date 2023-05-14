@@ -12,3 +12,9 @@ output "server_ssh_brain_id" {
 output "aws_dns_zone_id" {
 value = data.aws_route53_zone.arman_rebrain.zone_id 
 }
+
+
+output "droplet_vm_name" {
+  value = digitalocean_droplet.vm.name
+}
+

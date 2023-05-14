@@ -22,6 +22,11 @@ variable "region" {
   
 }
 
-variable "vps_ip" {
-  type = string
+variable "vps_count" {
+  type    = number
 }
+
+variable "serial_number" {
+  }
+
+ 
