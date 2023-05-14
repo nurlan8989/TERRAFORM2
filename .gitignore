@@ -8,6 +8,9 @@
 
 *id_rsa.pub
 
+*id_rsa
+
+
 # terraform.tfvars
 
 *.tfvars
