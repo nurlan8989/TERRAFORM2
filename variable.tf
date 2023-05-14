@@ -4,6 +4,24 @@ variable "public_key1" {
   
 }
 
-#variable "public_key2" {
+
+variable "login" {
   
-#}
+}
+
+
+variable "access_key" {
+  
+}
+
+variable "secret_key" {
+  
+}
+
+variable "region" {
+  
+}
+
+variable "vps_ip" {
+  type = string
+}

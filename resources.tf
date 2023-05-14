@@ -1,4 +1,3 @@
-
 resource "digitalocean_ssh_key" "key1" {
   name       = "key1"
   public_key = file(var.public_key1)
