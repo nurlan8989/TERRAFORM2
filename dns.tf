@@ -17,5 +17,6 @@ resource "aws_route53_record" "arman_devops_rebrain_srwx_net2" {
   type    = "A"
   ttl     = "300"
   records =  [ local.vps_ip ]
+  #records = [module.digitalocean.droplet_ip_address]
 
 }
