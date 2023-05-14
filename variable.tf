@@ -24,6 +24,7 @@ variable "region" {
 
 variable "vps_count" {
   type    = number
+  
 }
 
 variable "serial_number" {

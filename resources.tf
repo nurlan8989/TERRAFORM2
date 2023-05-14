@@ -14,6 +14,7 @@ resource "digitalocean_droplet" "vm" {
   name     = "test"
   region   = "nyc1"
   size     = "s-1vcpu-1gb"
+  count = var.vps_count
     ssh_keys = [
     digitalocean_ssh_key.key1.id,
     data.digitalocean_ssh_key.example.id

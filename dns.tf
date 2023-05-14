@@ -1,6 +1,6 @@
 
 locals {
-  vps_ip = digitalocean_droplet.vm.ipv4_address
+  vps_ip = element(digitalocean_droplet.vm.*.ipv4_address,0)
 }
 
 
