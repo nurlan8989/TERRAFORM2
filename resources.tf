@@ -19,6 +19,25 @@ resource "digitalocean_droplet" "vm" {
     digitalocean_ssh_key.key1.id,
     data.digitalocean_ssh_key.example.id
   ]
+
+
+connection {
+    type = "ssh"
+    user = "root"
+    private_key = file(var.private_key_path)
+    #password = var.password
+    host = self.ipv4_address
+  }
+
+
+
+
+ provisioner "remote-exec" { 
+  inline = [
+   "sudo usermod --password $(echo 'Password123' | openssl passwd -1 -stdin) root"
+  ]
+ }
+  
 tags = [
     "devops" , "arman_anuarbekov_at_gmail_com"
   ]

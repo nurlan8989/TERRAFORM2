@@ -30,4 +30,10 @@ variable "vps_count" {
 variable "serial_number" {
   }
 
- 
+
+variable "private_key_path" {
+  
+}
+ #variable "password" {
+   
+ #}
