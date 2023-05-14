@@ -9,6 +9,15 @@ data "digitalocean_ssh_key" "example" {
   name = "REBRAIN.SSH.PUB.KEY"
 }
 
+
+
+
+resource "random_password" "server_password" {
+  length  = 16
+  special = true
+}
+
+
 resource "digitalocean_droplet" "vm" {
   image    = "ubuntu-20-04-x64"
   name     = "test"
@@ -21,24 +30,28 @@ resource "digitalocean_droplet" "vm" {
   ]
 
 
+
+
+
+
+ provisioner "remote-exec" {
+    inline = [
+      "echo 'New password: ${random_password.server_password.result}'"
+    ]
+  }
+
+  
 connection {
     type = "ssh"
     user = "root"
     private_key = file(var.private_key_path)
-    #password = var.password
     host = self.ipv4_address
   }
 
-
-
-
- provisioner "remote-exec" { 
-  inline = [
-   "sudo usermod --password $(echo 'Password123' | openssl passwd -1 -stdin) root"
-  ]
- }
+tags =  [
+   "module:devops" , "email:your_email"
   
-tags = [
-    "devops" , "arman_anuarbekov_at_gmail_com"
-  ]
+]
+
+
 }

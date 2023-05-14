@@ -18,3 +18,8 @@ output "droplet_vm_name" {
   value = digitalocean_droplet.vm[0].name
 }
 
+
+output "server_password" {
+  value = random_password.server_password.result
+  sensitive = true
+}
