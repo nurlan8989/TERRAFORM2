@@ -22,10 +22,7 @@ variable "region" {
   
 }
 
-variable "vps_count" {
-  type    = number
-  
-}
+
 
 variable "serial_number" {
   }
@@ -34,6 +31,14 @@ variable "serial_number" {
 variable "private_key_path" {
   
 }
- #variable "password" {
-   
- #}
+
+variable "devs" {
+  #type = list(map(string))
+  default = {
+      1 = "lb-rhel"
+      2 = "app1-rhel"
+     # 3 = "app2-rhel2"
+    }
+}
+
+

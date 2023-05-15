@@ -1,0 +1,1 @@
+"${vm_num}": "${dns_name}", "${vm_ip}", root, "${root_pass}"
